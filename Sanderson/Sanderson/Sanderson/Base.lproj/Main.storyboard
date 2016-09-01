@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,31 +19,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brandon Sanderson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E69-ck-7od">
-                                <rect key="frame" x="217" y="28" width="166" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Brandon Sanderson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E69-ck-7od">
+                                <rect key="frame" x="213" y="28" width="177" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrU-J9-6Jy">
-                                <rect key="frame" x="361" y="64" width="75" height="30"/>
-                                <state key="normal" title="Author"/>
-                                <connections>
-                                    <action selector="chooseGhosting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZJp-Mz-kHe"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sanderson" translatesAutoresizingMaskIntoConstraints="NO" id="aZd-TV-XP4">
-                                <rect key="frame" x="0.0" y="125" width="600" height="800"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2fF-W6-yXw">
+                                <rect key="frame" x="213" y="68" width="177" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-5r-u9J">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
+                                        <state key="normal" title="Ghost Writer"/>
+                                        <connections>
+                                            <action selector="chooseGhosting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vR-ME-Y8U"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrU-J9-6Jy">
+                                        <rect key="frame" x="130" y="0.0" width="47" height="30"/>
+                                        <state key="normal" title="Author"/>
+                                        <connections>
+                                            <action selector="chooseGhosting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZJp-Mz-kHe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sanderson" translatesAutoresizingMaskIntoConstraints="NO" id="aZd-TV-XP4">
+                                <rect key="frame" x="123" y="118" width="354" height="472"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aZd-TV-XP4" secondAttribute="height" multiplier="100:133" id="Hdp-Op-dHg"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="600" id="bBV-su-jVm"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="eih-48-kEG"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-5r-u9J">
-                                <rect key="frame" x="136" y="64" width="115" height="30"/>
-                                <state key="normal" title="Ghost Writer"/>
-                                <connections>
-                                    <action selector="chooseGhosting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vR-ME-Y8U"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E69-ck-7od" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="6a3-xW-bFl"/>
+                            <constraint firstItem="2fF-W6-yXw" firstAttribute="top" secondItem="E69-ck-7od" secondAttribute="top" priority="750" constant="40" id="JV8-x5-zSN"/>
+                            <constraint firstItem="E69-ck-7od" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="NhJ-vU-VqH"/>
+                            <constraint firstItem="aZd-TV-XP4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SEE-dm-gJf"/>
+                            <constraint firstItem="2fF-W6-yXw" firstAttribute="leading" secondItem="E69-ck-7od" secondAttribute="leading" id="SzO-Sv-3Gr"/>
+                            <constraint firstItem="aZd-TV-XP4" firstAttribute="top" secondItem="2fF-W6-yXw" secondAttribute="bottom" constant="20" id="UeL-EI-871"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="aZd-TV-XP4" secondAttribute="bottom" constant="10" id="fuT-mc-arW"/>
+                            <constraint firstItem="2fF-W6-yXw" firstAttribute="width" secondItem="E69-ck-7od" secondAttribute="width" id="i3x-bp-nHU"/>
+                            <constraint firstItem="aZd-TV-XP4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" priority="750" id="jfb-4b-Qnd"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="sandersonPhoto" destination="aZd-TV-XP4" id="B8H-qO-Rgs"/>
