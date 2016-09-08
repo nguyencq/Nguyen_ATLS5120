@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="beatles" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AbbeyRoad" translatesAutoresizingMaskIntoConstraints="NO" id="8Jp-fO-wkf">
+                                <rect key="frame" x="212" y="58" width="176" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="176" id="vSd-Hy-lkN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Beatles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOl-vC-8Eb">
+                                <rect key="frame" x="252" y="213" width="96" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="77x-lG-jHz"/>
+                                    <constraint firstAttribute="width" constant="96" id="Hmo-Ur-wYK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="zbz-cp-cDW">
+                                <rect key="frame" x="212" y="255" width="176" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="pif-Kx-LQw"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Early 60s"/>
+                                    <segment title="Late 60s"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeDisplay:" destination="BYZ-38-t0r" eventType="valueChanged" id="sez-Fg-SDC"/>
+                                </connections>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2p4-of-9Te">
+                                <rect key="frame" x="373" y="345" width="51" height="31"/>
+                                <connections>
+                                    <action selector="updateFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="21W-OG-KFn"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="String Case" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yo-gO-S7T">
+                                <rect key="frame" x="167" y="344" width="94" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="dsH-uz-y24"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="16" minValue="6" maxValue="22" translatesAutoresizingMaskIntoConstraints="NO" id="yvn-Sk-G9T">
+                                <rect key="frame" x="306" y="408" width="118" height="31"/>
+                                <connections>
+                                    <action selector="fontSize:" destination="BYZ-38-t0r" eventType="valueChanged" id="pVg-DB-rcR"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esv-XQ-Xgq">
+                                <rect key="frame" x="167" y="412" width="94" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fOl-vC-8Eb" firstAttribute="centerX" secondItem="zbz-cp-cDW" secondAttribute="centerX" id="0Y3-K2-X5x"/>
+                            <constraint firstItem="5yo-gO-S7T" firstAttribute="top" secondItem="zbz-cp-cDW" secondAttribute="bottom" constant="61" id="3QP-Ei-LKb"/>
+                            <constraint firstItem="zbz-cp-cDW" firstAttribute="top" secondItem="fOl-vC-8Eb" secondAttribute="bottom" constant="21" id="CzT-4C-bZ5"/>
+                            <constraint firstItem="5yo-gO-S7T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="167" id="E1b-Kd-Wuu"/>
+                            <constraint firstAttribute="trailing" secondItem="2p4-of-9Te" secondAttribute="trailing" constant="178" id="OJI-FL-cET"/>
+                            <constraint firstItem="2p4-of-9Te" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="325" id="Oyl-a6-bmf"/>
+                            <constraint firstItem="5yo-gO-S7T" firstAttribute="centerY" secondItem="2p4-of-9Te" secondAttribute="centerY" id="PIb-xB-6L3"/>
+                            <constraint firstItem="8Jp-fO-wkf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cUw-Ud-P9z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2p4-of-9Te" secondAttribute="bottom" constant="224" id="gIs-Ly-tbd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5yo-gO-S7T" secondAttribute="bottom" constant="222" id="gy2-ME-Ik5"/>
+                            <constraint firstItem="8Jp-fO-wkf" firstAttribute="leading" secondItem="zbz-cp-cDW" secondAttribute="leading" id="iwg-51-b5h"/>
+                            <constraint firstItem="fOl-vC-8Eb" firstAttribute="top" secondItem="8Jp-fO-wkf" secondAttribute="bottom" constant="27" id="miB-ll-4PV"/>
+                            <constraint firstItem="8Jp-fO-wkf" firstAttribute="trailing" secondItem="zbz-cp-cDW" secondAttribute="trailing" id="pL2-UP-cK7"/>
+                            <constraint firstItem="8Jp-fO-wkf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="yTx-4n-Yk7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="beatlesImage" destination="8Jp-fO-wkf" id="q9R-eF-rhD"/>
+                        <outlet property="capitalSwitch" destination="2p4-of-9Te" id="81p-sV-DmC"/>
+                        <outlet property="fontSizeLabel" destination="esv-XQ-Xgq" id="Ldp-wI-yhd"/>
+                        <outlet property="imageControl" destination="zbz-cp-cDW" id="Ny7-6m-1x1"/>
+                        <outlet property="titleLabel" destination="fOl-vC-8Eb" id="tLM-xe-6TR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="418"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AbbeyRoad" width="150" height="150"/>
+    </resources>
+</document>
