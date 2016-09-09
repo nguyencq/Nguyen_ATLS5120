@@ -17,11 +17,11 @@ class ViewController: UIViewController {
     @IBAction func artButton(sender: UIButton) {
         if sender.currentTitle=="Artwork" {
             leadImage.image=UIImage(named: "Relativity.png")
-            bioText.text="This is one of Escher's famous works, named Relativity."
+            bioText.text="This is one of Escher's famous works, Relativity."
         }
         else if sender.currentTitle=="Biography" {
             leadImage.image=UIImage(named:"Reflection.png")
-            bioText.text="M.C. Escher is an artist famouse for creating mind-bending works of art."
+            bioText.text="M.C. Escher is a Dutch artist famous for math-based art."
         }
     }
     
