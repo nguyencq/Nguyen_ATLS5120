@@ -20,22 +20,45 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var fontSizeLabel: UILabel!
     
-    @IBAction func updateFont(sender: UISwitch) {
+    func updateImage(){
+        if imageControl.selectedSegmentIndex == 0 {
+            titleLabel.text="Young Beatles"
+            beatlesImage.image=UIImage(named: "Beatles1")
+        }
+        else if imageControl.selectedSegmentIndex == 1 {
+            titleLabel.text="Not so young Beatles"
+            beatlesImage.image=UIImage(named: "Beatles2")
+        }
+    }
+    
+    func updateCaps(){
         if capitalSwitch.on {
             titleLabel.text=titleLabel.text?.uppercaseString
-        } else {
+        }
+        else {
             titleLabel.text=titleLabel.text?.lowercaseString
         }
     }
     
+    @IBAction func updateFont(sender: UISwitch) {
+        /*if capitalSwitch.on {
+            titleLabel.text=titleLabel.text?.uppercaseString
+        } else {
+            titleLabel.text=titleLabel.text?.lowercaseString
+        }*/
+        updateCaps()
+    }
+    
     @IBAction func changeDisplay(sender: UISegmentedControl) {
-        if imageControl.selectedSegmentIndex==0 {
+        /*if imageControl.selectedSegmentIndex==0 {
             titleLabel.text="Younger Beatles"
             beatlesImage.image=UIImage(named:"Beatles1")
         } else if imageControl.selectedSegmentIndex==1 {
             titleLabel.text="Not so young Beatles"
             beatlesImage.image=UIImage(named: "Beatles2")
-        }
+        }*/
+        updateImage()
+        updateCaps()
     }
     
     @IBAction func fontSize(sender: UISlider) {
