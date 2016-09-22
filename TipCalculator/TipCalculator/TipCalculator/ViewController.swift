@@ -66,6 +66,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if numPeople != nil {
             if numPeople! > 0 {
                 pp = total! / Float(numPeople!)
+            } else {
+                // Create a UIAlertController object
+                let alert = UIAlertController(title: "Warning", message: "The number of people must be greater than 0.", preferredStyle: UIAlertControllerStyle.Alert)
+                // create a UIAlertAction object for the button
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
+                    {action in
+                        self.peopleInput.text="1"
+                        self.updateTipTotals()
+                    })
+                alert.addAction(cancelAction)
+                alert.addAction(okAction)
+                presentViewController(alert, animated: true, completion: nil)
             }
         }
         
