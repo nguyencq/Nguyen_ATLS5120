@@ -9,6 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var bookLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    
+    var user = Favorite()
+    
+    
+    
+    @IBAction func unwindSegue (segue:UIStoryboardSegue) {
+        bookLabel.text = user.favBook
+        authorLabel.text = user.favAuthor
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

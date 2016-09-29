@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB5613DA1D9D92A600778C2C /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5613D91D9D92A600778C2C /* Favorites.swift */; };
 		CB6B55D41D9AF0D5006F80AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B55D31D9AF0D5006F80AE /* AppDelegate.swift */; };
 		CB6B55D61D9AF0D5006F80AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B55D51D9AF0D5006F80AE /* ViewController.swift */; };
 		CB6B55D91D9AF0D6006F80AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6B55D71D9AF0D6006F80AE /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB5613D91D9D92A600778C2C /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		CB6B55D01D9AF0D5006F80AE /* Favorites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Favorites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6B55D31D9AF0D5006F80AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB6B55D51D9AF0D5006F80AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				CB6B55D31D9AF0D5006F80AE /* AppDelegate.swift */,
 				CB6B55D51D9AF0D5006F80AE /* ViewController.swift */,
 				CB6B55D71D9AF0D6006F80AE /* Main.storyboard */,
+				CB5613D91D9D92A600778C2C /* Favorites.swift */,
 				CB6B55E51D9AF265006F80AE /* Scene2ViewController.swift */,
 				CB6B55DA1D9AF0D6006F80AE /* Assets.xcassets */,
 				CB6B55DC1D9AF0D6006F80AE /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB6B55D61D9AF0D5006F80AE /* ViewController.swift in Sources */,
+				CB5613DA1D9D92A600778C2C /* Favorites.swift in Sources */,
 				CB6B55D41D9AF0D5006F80AE /* AppDelegate.swift in Sources */,
 				CB6B55E61D9AF265006F80AE /* Scene2ViewController.swift in Sources */,
 			);
@@ -292,6 +296,7 @@
 				CB6B55E41D9AF0D6006F80AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
