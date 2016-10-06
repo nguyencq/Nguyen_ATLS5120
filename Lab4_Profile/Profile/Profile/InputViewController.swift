@@ -15,6 +15,7 @@ class InputViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userAge: UITextField!
     @IBOutlet weak var userLocation: UITextField!
     
+
  
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -24,18 +25,14 @@ class InputViewController: UIViewController, UITextFieldDelegate {
                 homePage.user.name = userName.text
             }
             if userAge.text!.isEmpty == false {
-                homePage.user.age = userName.text
+                homePage.user.age = userAge.text!
             }
             if userLocation.text!.isEmpty == false {
-                homePage.user.location = userLocation.text
+                homePage.user.location = userLocation.text!
             }
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
 
     override func viewDidLoad() {
         userName.delegate = self
@@ -44,6 +41,11 @@ class InputViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {
