@@ -62,16 +62,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 let workoutsPer = numWorkouts.value
                 let milesCovered = Float((round(100*(time*distance!))/100) * workoutsPer)
                 let caloriesBurned = time * calsRate! * workoutsPer
-                miles.text = String(milesCovered)
-                calories.text = String (caloriesBurned)
+                miles.text = String(milesCovered) + " miles"
+                calories.text = String (caloriesBurned) + " calories"
                 workoutImage.image = UIImage(named: image!)
             } else {
                 let milesCovered = Float(round(100*(time*distance!))/100)
                 let caloriesBurned = time*calsRate!
-                miles.text = String(milesCovered)
-                calories.text = String(caloriesBurned)
+                miles.text = String(milesCovered) + " miles"
+                calories.text = String(caloriesBurned) + " calories"
                 workoutImage.image=UIImage(named: image!)
             }
+        }
+        
+        if time < 30 {
+            let alert = UIAlertController(title: "Alert", message: "Your workout is less than 30 minutes. It is advised to workout for at least 30 minutes!", preferredStyle: UIAlertControllerStyle.Alert)
+            let dismissAction = UIAlertAction(title: "Got it!", style: UIAlertActionStyle.Cancel, handler: nil)
+            alert.addAction(dismissAction)
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
     
