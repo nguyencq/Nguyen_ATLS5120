@@ -53,42 +53,41 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var forexDisplay: UILabel!
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
-        
+        changeCard()
     }
 
     
-    
-    /*func changeCard() {
-        if afSwitch.on {
-            if categorySelector.selectedSegmentIndex == 0 {
+    func changeCard() {
+        if userProfile.af! {
+            if userProfile.rewardT == 0 {
                 updateDisplay(barclaycardRewards)
-            } else if categorySelector.selectedSegmentIndex == 1 {
+            } else if userProfile.rewardT == 1 {
                 updateDisplay(citiDouble)
-            } else if categorySelector.selectedSegmentIndex == 2 {
+            } else if userProfile.rewardT == 2 {
                 updateDisplay(bankAmericard)
-            } else if categorySelector.selectedSegmentIndex == 3 {
-                if ftfSwitch.on {
+            } else if userProfile.rewardT == 3 {
+                if userProfile.ftf! {
                     updateDisplay(discoverIT)
                 } else {
                     updateDisplay(chaseFreedom)
                 }
             }
         } else {
-            if categorySelector.selectedSegmentIndex == 0 {
+            if userProfile.rewardT == 0 {
                 updateDisplay(capitalOneSecured)
-            } else if categorySelector.selectedSegmentIndex == 1 {
+            } else if userProfile.rewardT == 1 {
                 updateDisplay(capitalOneQuicksilver)
-            } else if categorySelector.selectedSegmentIndex == 2 {
-                if ftfSwitch.on {
+            } else if userProfile.rewardT == 2 {
+                if userProfile.ftf! {
                     updateDisplay(amexSPG)
                 } else {
                     updateDisplay(chaseSapphire)
                 }
-            } else if categorySelector.selectedSegmentIndex == 3 {
+            } else if userProfile.rewardT == 3 {
                 updateDisplay(amexBlueCash)
             }
         }
-    }*/
+    }
     
     func updateDisplay(display: Card) {
         displayCard = display
@@ -100,6 +99,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         btfeeDisplay.text = displayCard.btfee
         forexDisplay.text = displayCard.forex
         cardImage.image = UIImage(named: displayCard.image!)
+        rewardsDisplay.backgroundColor = UIColor(white: 1, alpha: 0)
+        bonusDisplay.backgroundColor = UIColor(white: 1, alpha: 0)
+        afDisplay.backgroundColor = UIColor(white: 1, alpha: 0)
+        aprDisplay.backgroundColor = UIColor(white: 1, alpha: 0)
+        btfeeDisplay.backgroundColor = UIColor(white: 1, alpha: 0)
+        forexDisplay.backgroundColor = UIColor(white: 1, alpha: 0)
     }
     
     
@@ -107,7 +112,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
 
     override func viewDidLoad() {
-        informationLabel.layer.borderWidth = 1
+        /*informationLabel.layer.borderWidth = 1
         detailsLabel.layer.borderWidth = 1
         rewardsLabel.layer.borderWidth = 1
         rewardsDisplay.layer.borderWidth = 1
@@ -120,7 +125,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         btfeeLabel.layer.borderWidth = 1
         btfeeDisplay.layer.borderWidth = 1
         forexLabel.layer.borderWidth = 1
-        forexDisplay.layer.borderWidth = 1
+        forexDisplay.layer.borderWidth = 1*/
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }

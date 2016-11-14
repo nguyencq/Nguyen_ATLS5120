@@ -15,6 +15,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var creditScore: UILabel!
     @IBOutlet weak var creditSlider: UISlider!
     
+    @IBOutlet weak var ftfSwitch: UISwitch!
+    @IBOutlet weak var afSwitch: UISwitch!
+    @IBOutlet weak var btSwitch: UISwitch!
+    @IBOutlet weak var forexSwitch: UISwitch!
+    @IBOutlet weak var categorySelector: UISegmentedControl!
     
     
     @IBAction func changeScore(sender: UISlider) {
@@ -37,6 +42,33 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onTapGestureRecognized(sender: AnyObject) {
         numCards.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        let num: Int? = Int(textField.text!)
+        if num > 5 {
+            ftfSwitch.enabled = true
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "doneEditing" {
+            let home = segue.destinationViewController as! ViewController
+            home.userProfile.score = Int(creditSlider.value)
+            home.userProfile.cards = Int(numCards.text!)
+            home.userProfile.af = afSwitch.on
+            home.userProfile.balanceXfer = btSwitch.on
+            home.userProfile.forex = !forexSwitch.on
+            home.userProfile.rewardT = categorySelector.selectedSegmentIndex
+            if ftfSwitch.enabled {
+                home.userProfile.ftf = ftfSwitch.on
+            }
+        }
     }
     
 

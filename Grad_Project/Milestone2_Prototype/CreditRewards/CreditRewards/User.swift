@@ -16,5 +16,6 @@ class User {
     var af: Bool?
     var balanceXfer: Bool?
     var forex: Bool?
+    var rewardT: Int?
 
 }
