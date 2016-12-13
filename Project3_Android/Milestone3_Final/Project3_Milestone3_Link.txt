@@ -1,0 +1,8 @@
+ATLS 5120 - Project 3
+Christina Nguyen
+
+This project can draw the GUI and animates, but it is not reading the intersects, so the ball never changes direction at present.
+
+Link to Android Studio project (compressed as .zip):
+
+https://drive.google.com/open?id=0B5EHxLfE-UJWOV9mZFptM2J4aFU
